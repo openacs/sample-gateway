@@ -15,7 +15,7 @@
         <owner url="mailto:janine@furfly.net">Janine Sisk</owner>
         <summary>Sample payment gateway.</summary>
         <vendor url="http://www.furfly.net">furfly.net, LLC</vendor>
-        <description format="text/html">This is a sample payment gateway, suitable for copying to create a real one.</description>
+        <description format="text/html">A sample payment gateway, suitable for testing and as a skeletion for a full implementation.</description>
 
         <requires url="payment-gateway" version="4.5b"/>
 
