@@ -6,6 +6,7 @@ begin
   foo := acs_sc_impl.new(
 	   'PaymentGateway',               	-- impl_contract_name
            'sample-gateway',                    -- impl_name
+           'sample-gateway',                    -- impl_pretty_name
 	   'sample-gateway'                     -- impl_owner_name
   );
 
