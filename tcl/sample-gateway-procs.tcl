@@ -16,9 +16,9 @@ ad_proc sample_gateway.log_results {
     @author Janine Sisk; furfly.net, LLC (janine@furfly.net)
 } {
     if [catch {db_dml do-insert "insert into sample_gateway_result_log
-(transaction_id, txn_attempted_type, txn_attempted_time, txn_returned_type, errmsg, auth_code, avs_code_zip, avs_code_addr, amount)
+(transaction_id, txn_attempted_type, txn_attempted_time, txn_returned_type, errmsg, auth_code, amount)
 values
-(:transaction_id, :txn_attempted_type, :txn_attempted_time, :txn_returned_type, :errmsg, :auth_code, :avs_code_zip, :avs_code_addr, :amount)"} errmsg] {
+(:transaction_id, :txn_attempted_type, :txn_attempted_time, :txn_returned_type, :errmsg, :auth_code, :amount)"} errmsg] {
       ns_log Error "Wasn't able to do insert into sample_gateway_result_log for transaction_id $transaction_id;  error was $errmsg"
      }
 }
@@ -70,7 +70,7 @@ ad_proc sample_gateway.Authorize {
     # out whether they can be considered authorized if they fail AVS
     set return_values(response_code) [nsv_get payment_gateway_return_codes success]
     set return_values(reason) ""
-    set return_values(transaction_id) ""
+    set return_values(transaction_id) $transaction_id
     return [array get return_values]
 }
 
