@@ -139,7 +139,7 @@ ad_proc sample_gateway.Return {
     # of being split out on its own.
     set return_values(response_code) [nsv_get payment_gateway_return_codes success]
     set return_values(reason) ""
-    set return_values(transaction_id) ""
+    set return_values(transaction_id) [db_nextval ec_transaction_id_sequence]
     return [array get return_values]
 }
 
