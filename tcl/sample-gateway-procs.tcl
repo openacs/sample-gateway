@@ -91,12 +91,12 @@ ad_proc sample_gateway.ChargeCard {
     @author Janine Sisk; furfly.net, LLC (janine@furfly.net)
 } {
     # ChargeCard is a wrapper so we can present a consistent interface to
-    # the end caller.  It will just pass on it's parameters to PostAuth,
+    # the end caller.  It will just pass on its parameters to PostAuth,
     # AuthCapture or Charge, whichever is appropriate for the implementation
     # at hand.  Here, we are doing nothing.
 
     # We are returning the transaction_id we were given, but if this
-    # wasn't just a stub we'd be returning the value that came back from 
+    # wasn't just a stub we'd be returning the value that came back from
     # the gateway.  We'd also be returning the value that was returned.
     set return_values(response_code) [nsv_get payment_gateway_return_codes success]
     set return_values(reason) ""
